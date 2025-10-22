@@ -1,0 +1,302 @@
+/* =========================================================
+   SISTEMA DE DESIGN - Design System (Módulo 2)
+========================================================= */
+
+:root {
+  /* 🎨 Paleta de Cores */
+  --cor-primaria: #b22222;     
+  --cor-secundaria: #2e7d32;   
+  --cor-destaque: #fbc02d;     
+  --cor-fundo: #f8f9fa;
+  --cor-texto: #333;
+  --cor-neutra: #e0e0e0;
+  --cor-branca: #fff;
+  --cor-hover: #911919;
+
+  /* 🧱 Tipografia */
+  --fonte-base: 'Inter', sans-serif;
+  --fonte-titulo: 'Poppins', sans-serif;
+
+  /* 🧩 Tamanhos de Fonte */
+  --fs-xxl: 2.5rem;
+  --fs-xl: 2rem;
+  --fs-lg: 1.5rem;
+  --fs-md: 1rem;
+  --fs-sm: 0.875rem;
+
+  /* 📏 Espaçamento modular */
+  --esp-1: 8px;
+  --esp-2: 16px;
+  --esp-3: 24px;
+  --esp-4: 32px;
+  --esp-5: 48px;
+  --esp-6: 64px;
+
+  /* 🧩 Sistema de Grid */
+  --grid-colunas: 12;
+  --largura-max: 1200px;
+}
+
+/* =========================================================
+   RESET E CONFIGURAÇÕES GERAIS
+========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-base);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* =========================================================
+   CABEÇALHO E MENU RESPONSIVO
+========================================================= */
+header {
+  background: var(--cor-primaria);
+  color: var(--cor-branca);
+  padding: var(--esp-3);
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  font-family: var(--fonte-titulo);
+  font-size: var(--fs-xl);
+  margin-bottom: var(--esp-2);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: var(--esp-2);
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--cor-branca);
+  text-decoration: none;
+  font-weight: 600;
+  padding: var(--esp-1) var(--esp-2);
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  background-color: var(--cor-hover);
+}
+
+/* ===== Menu Hambúrguer (mobile) ===== */
+.menu-toggle {
+  display: none;
+  position: absolute;
+  top: var(--esp-2);
+  right: var(--esp-2);
+  background: transparent;
+  border: 2px solid var(--cor-branca);
+  color: var(--cor-branca);
+  padding: var(--esp-1);
+  border-radius: 6px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+========================================================= */
+main {
+  max-width: var(--largura-max);
+  margin: var(--esp-4) auto;
+  padding: 0 var(--esp-3);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--esp-4);
+}
+
+section {
+  background-color: var(--cor-branca);
+  padding: var(--esp-3);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  font-family: var(--fonte-titulo);
+  font-size: var(--fs-lg);
+  color: var(--cor-primaria);
+  margin-bottom: var(--esp-2);
+}
+
+/* =========================================================
+   CARDS DE PROJETOS
+========================================================= */
+article {
+  background-color: var(--cor-neutra);
+  padding: var(--esp-3);
+  border-radius: 10px;
+  margin-bottom: var(--esp-3);
+  transition: 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-4px);
+  background-color: #f1f1f1;
+}
+
+article h3 {
+  color: var(--cor-secundaria);
+  margin-bottom: var(--esp-1);
+}
+
+/* =========================================================
+   FORMULÁRIOS ESTILIZADOS
+========================================================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-3);
+}
+
+fieldset {
+  border: 2px solid var(--cor-primaria);
+  border-radius: 10px;
+  padding: var(--esp-3);
+}
+
+legend {
+  font-weight: bold;
+  color: var(--cor-primaria);
+}
+
+label {
+  font-weight: 600;
+  margin-top: var(--esp-1);
+}
+
+input, select {
+  width: 100%;
+  padding: var(--esp-2);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 4px;
+  font-size: var(--fs-md);
+}
+
+input:focus, select:focus {
+  outline: 2px solid var(--cor-secundaria);
+}
+
+button {
+  background: var(--cor-primaria);
+  color: var(--cor-branca);
+  border: none;
+  padding: var(--esp-2);
+  border-radius: 8px;
+  font-size: var(--fs-md);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: var(--cor-hover);
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   COMPONENTES DE FEEDBACK
+========================================================= */
+.alerta {
+  background-color: #ffefc1;
+  color: #6a4e00;
+  padding: var(--esp-2);
+  border-radius: 6px;
+  margin-bottom: var(--esp-2);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-conteudo {
+  background: var(--cor-branca);
+  padding: var(--esp-4);
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+footer {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branca);
+  text-align: center;
+  padding: var(--esp-3);
+  border-radius: 12px 12px 0 0;
+}
+
+
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+    padding: var(--esp-2);
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: var(--cor-primaria);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    padding: var(--esp-3);
+  }
+
+  nav ul.mostrar {
+    display: flex;
+  }
+
+  nav a {
+    display: block;
+    padding: var(--esp-2);
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  button {
+    font-size: var(--fs-sm);
+  }
+}

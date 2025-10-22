@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projetos sociais e campanhas da ONG Esperança Palestina.">
+  <title>Projetos Sociais - ONG Esperança Palestina</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Projetos Sociais</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Nossos Projetos</h2>
+      <article>
+        <h3>Educação para o Futuro</h3>
+        <p>Oferecemos aulas e materiais escolares para crianças refugiadas, garantindo acesso à educação de qualidade.</p>
+        <img src="imagens/criancas.jpg" alt="Crianças estudando com materiais escolares">
+      </article>
+
+      <article>
+        <h3>Casa Segura</h3>
+        <p>Construímos abrigos temporários para famílias deslocadas, com foco em segurança e dignidade.</p>
+        <img src="imagens/voluntariado.jpg" alt="Voluntários construindo abrigos">
+      </article>
+    </section>
+
+    <section>
+      <h2>Como Ajudar</h2>
+      <p>Você pode apoiar nossos projetos através de doações financeiras, voluntariado ou parcerias.</p>
+      <ul>
+        <li><strong>Doações:</strong> Acesse nosso formulário de cadastro.</li>
+        <li><strong>Voluntariado:</strong> Entre em contato pelo e-mail para participar.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ONG Esperança Palestina | Esperança que reconstrói vidas.</p>
+  </footer>
+
+<script type="module" src="js/app.js"></script>
+</body>
+
+<script>
+  const botaoMenu = document.createElement('button');
+  botaoMenu.textContent = "☰";
+  botaoMenu.classList.add('menu-toggle');
+  document.querySelector('header').appendChild(botaoMenu);
+
+  const menu = document.querySelector('nav ul');
+  botaoMenu.addEventListener('click', () => {
+    menu.classList.toggle('mostrar');
+  });
+</script>
+
+</html>
