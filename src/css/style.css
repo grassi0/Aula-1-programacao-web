@@ -46,11 +46,19 @@
   box-sizing: border-box;
 }
 
+
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: var(--fonte-base);
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* altura mínima da tela inteira */
 }
 
 img {
@@ -115,6 +123,7 @@ nav a:hover {
    CONTEÚDO PRINCIPAL
 ========================================================= */
 main {
+  flex: 1; 
   max-width: var(--largura-max);
   margin: var(--esp-4) auto;
   padding: 0 var(--esp-3);
@@ -246,7 +255,7 @@ button:disabled {
 }
 
 /* =========================================================
-   RODAPÉ
+   RODAPÉ FIXO E RESPONSIVO
 ========================================================= */
 footer {
   background-color: var(--cor-primaria);
@@ -254,9 +263,18 @@ footer {
   text-align: center;
   padding: var(--esp-3);
   border-radius: 12px 12px 0 0;
+  margin-top: auto; 
+  font-size: var(--fs-sm);
+  line-height: 1.4;
 }
 
+footer p {
+  margin: 0;
+}
 
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
 @media (max-width: 900px) {
   main {
     grid-template-columns: 1fr;
