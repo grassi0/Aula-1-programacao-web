@@ -4,7 +4,7 @@
 // Observação: fetch em file:// pode falhar — use Live Server ou GitHub Pages.
 
 export function initSPA() {
-  // on first load, nothing special — links serão interceptados
+  
   window.addEventListener('popstate', (e) => {
     const url = location.pathname.split('/').pop() || 'index.html';
     loadIntoMain(url, false);

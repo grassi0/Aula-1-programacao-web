@@ -24,7 +24,7 @@
     <section>
       <h2>Quem Somos</h2>
       <p>A ONG Esperança Palestina é uma organização sem fins lucrativos dedicada a oferecer assistência humanitária às famílias afetadas pela guerra. Nosso objetivo é reconstruir vidas por meio da solidariedade e do apoio social.</p>
-      <img src="imagens/text.png" alt="Voluntários oferecendo ajuda humanitária">
+      <img src="imagens/text.png" alt="Voluntários palestinos oferecendo ajuda humanitária em campo de refugiados">
     </section>
 
     <section>
@@ -46,19 +46,17 @@
     <p>&copy; 2025 ONG Esperança Palestina | Todos os direitos reservados.</p>
   </footer>
 
-<script type="module" src="js/app.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script>
+    const botaoMenu = document.createElement('button');
+    botaoMenu.textContent = "☰";
+    botaoMenu.classList.add('menu-toggle');
+    document.querySelector('header').appendChild(botaoMenu);
+
+    const menu = document.querySelector('nav ul');
+    botaoMenu.addEventListener('click', () => {
+      menu.classList.toggle('mostrar');
+    });
+  </script>
 </body>
-
-<script>
-  const botaoMenu = document.createElement('button');
-  botaoMenu.textContent = "☰";
-  botaoMenu.classList.add('menu-toggle');
-  document.querySelector('header').appendChild(botaoMenu);
-
-  const menu = document.querySelector('nav ul');
-  botaoMenu.addEventListener('click', () => {
-    menu.classList.toggle('mostrar');
-  });
-</script>
-
 </html>

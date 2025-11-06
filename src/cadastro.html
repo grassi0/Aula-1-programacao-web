@@ -14,7 +14,7 @@
     <nav>
       <ul>
         <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="projeto.html">Projetos</a></li>
         <li><a href="cadastro.html">Cadastro</a></li>
       </ul>
     </nav>
@@ -83,18 +83,17 @@
   </footer>
 
   <script type="module" src="js/app.js"></script>
+  <script>
+    const botaoMenu = document.createElement('button');
+    botaoMenu.textContent = "☰";
+    botaoMenu.classList.add('menu-toggle');
+    botaoMenu.setAttribute('aria-label', 'Abrir menu de navegação');
+    document.querySelector('header').appendChild(botaoMenu);
+
+    const menu = document.querySelector('nav ul');
+    botaoMenu.addEventListener('click', () => {
+      menu.classList.toggle('mostrar');
+    });
+  </script>
 </body>
-
-<script>
-  const botaoMenu = document.createElement('button');
-  botaoMenu.textContent = "☰";
-  botaoMenu.classList.add('menu-toggle');
-  document.querySelector('header').appendChild(botaoMenu);
-
-  const menu = document.querySelector('nav ul');
-  botaoMenu.addEventListener('click', () => {
-    menu.classList.toggle('mostrar');
-  });
-</script>
-
 </html>
